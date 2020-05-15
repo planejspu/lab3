@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableView->setModel((addressBook));
 
+
+
 }
 
 MainWindow::~MainWindow()
@@ -74,7 +76,22 @@ QMessageBox *callContact = new QMessageBox;
 }
 callContact->setStandardButtons(QMessageBox::Ok);
 
+//QString name = addressBook->firstNames[1];
+//addressBook->phoneNumbers[2];
+QRegExp rx(phoneNumbers[0]);
+
+for (int i=0; i<addressBook->firstNames.size(); i++) {
+
+    if (rx.indexIn(addressBook->phoneNumbers[i]))
+    {
+ui->tableView->hideRow(i);
+    }
+}
+
+
 callContact->setText("Calling " + callText + "...");
+
+
 int ret = callContact->exec();
 
 switch (ret) {
@@ -104,6 +121,7 @@ void MainWindow::on_pushButton_2_clicked()
     if (temp.length() < 12) {
     temp.append("2");
     ui->lblDisplayNumber->setText(temp);
+
     }
     }
 
