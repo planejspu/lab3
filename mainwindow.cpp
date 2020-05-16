@@ -6,6 +6,7 @@
 #include <addressbookmodel.h>
  std::vector<QString> phoneNumbers;
  int length;
+ int clicks;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
@@ -41,6 +42,7 @@ void MainWindow::on_actionExit_triggered()
 void MainWindow::on_pushButton_1_clicked()
 {
 
+    clicks++;
     if (phoneNumbers.size() < 10) {
     phoneNumbers.push_back("1") ;
     QString temp = ui->lblDisplayNumber->text();
@@ -52,6 +54,15 @@ void MainWindow::on_pushButton_1_clicked()
         ui->lblDisplayNumber->setText(temp);
     }
     }
+
+    QRegExp rx("1");
+    for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+    if (!(rx.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+
+     ui->tableView->hideRow(i);
+
+}
+
 
 
 }
@@ -78,15 +89,6 @@ callContact->setStandardButtons(QMessageBox::Ok);
 
 //QString name = addressBook->firstNames[1];
 //addressBook->phoneNumbers[2];
-QRegExp rx(phoneNumbers[0]);
-
-for (int i=0; i<addressBook->firstNames.size(); i++) {
-
-    if (rx.indexIn(addressBook->phoneNumbers[i]))
-    {
-ui->tableView->hideRow(i);
-    }
-}
 
 
 callContact->setText("Calling " + callText + "...");
@@ -112,6 +114,7 @@ switch (ret) {
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    clicks++;
     if (phoneNumbers.size() < 10) {
     phoneNumbers.push_back("2") ;
     QString temp = ui->lblDisplayNumber->text();
@@ -124,6 +127,24 @@ void MainWindow::on_pushButton_2_clicked()
 
     }
     }
+
+//    QRegExp rx("1");
+//    for (int i = 0; i< 10; i++) {
+//    if (!(rx.indexIn(addressBook->phoneNumbers[i],1) == 1))
+
+//     ui->tableView->hideRow(i);
+
+//}
+
+    QRegExp rx("2");
+    for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+    if (!(rx.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+
+     ui->tableView->hideRow(i);
+
+}
+
+
 
 }
 
