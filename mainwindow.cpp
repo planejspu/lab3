@@ -4,7 +4,8 @@
 #include <iostream>
 #include <QMessageBox>
 #include <addressbookmodel.h>
- std::vector<QString> phoneNumbers;
+
+std::vector<QString> phoneNumbers;
  std::vector<QString> phoneNumbersHistory;
  int length;
  int calls=0;
@@ -159,14 +160,20 @@ void MainWindow::on_btnClear_clicked()
     ui->lblDisplayNumber->clear();
 }
 
-void MainWindow::on_pushButton_clicked()
+// Remove the last character.
+
+void MainWindow::on_btnDel_clicked()
 {
 
     QString temp = ui->lblDisplayNumber->text();
-    length = temp.length();
-    temp.remove(length-1,1);
+   // length = temp.length();
+
+    temp.remove(-1,1);
     ui->lblDisplayNumber->setText(temp);
+    if (phoneNumbers.size() > 0) {
     phoneNumbers.pop_back();
+    }
+
 }
 
 void MainWindow::on_tableView_clicked(const QModelIndex &index)

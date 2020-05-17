@@ -30,7 +30,7 @@ private slots:
 
     void on_btnClear_clicked();
 
-    void on_pushButton_clicked();
+    void on_btnDel_clicked();
 
     void on_tableView_clicked(const QModelIndex &index);
 
