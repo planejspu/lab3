@@ -42,7 +42,7 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_pushButton_1_clicked()
 {
-if (clicks == 3) { clicks++;}
+if (clicks == 3 || clicks == 7) { clicks++;}
     if (phoneNumbers.size() < 10) {
     phoneNumbers.push_back("1") ;
     QString temp = ui->lblDisplayNumber->text();
@@ -99,7 +99,7 @@ for (int i=0; i<2; i++) {
 void MainWindow::on_pushButton_2_clicked()
 {
 
-if (clicks == 3) { clicks++;}
+if (clicks == 3 || clicks == 7) { clicks++;}
     if (phoneNumbers.size() < 10) {
     phoneNumbers.push_back("2") ;
     QString temp = ui->lblDisplayNumber->text();
@@ -152,4 +152,196 @@ void MainWindow::on_pushButton_11_clicked()
 void MainWindow::on_pushButton_12_clicked()
 {
        ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("3") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("3");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("3"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("4") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("4");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("4"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("5") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("5");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("5"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("6") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("6");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("6"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("7") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("7");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("7"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("8") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("8");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("8"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("9") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("9");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("9"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    if (clicks == 3 || clicks == 7) { clicks++;}
+        if (phoneNumbers.size() < 10) {
+        phoneNumbers.push_back("0") ;
+        QString temp = ui->lblDisplayNumber->text();
+        if (temp.length() == 3 || temp.length() == 7) {
+            temp.append("-");
+        }
+        if (temp.length() < 12) {
+        temp.append("0");
+        ui->lblDisplayNumber->setText(temp);
+
+        }
+        }
+        QRegExp rx("[ABCabc]"); // not enabled used to match characters not numbers
+        QRegExp rx2("0"); // enabled per number matches 2 at the current click
+        for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
+          if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+               ui->tableView->hideRow(i);
+    }
+        clicks++;
 }
