@@ -1382,10 +1382,10 @@
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>40</y>
-      <width>121</width>
-      <height>20</height>
+      <x>380</x>
+      <y>20</y>
+      <width>51</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -1399,7 +1399,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">  background-color: #2c4147;
+     <string notr="true">background-image: url(&quot;c:/temp/images/history.jpg&quot;) 3 10 3 10;
   color: white;
   padding: 15px;
   text-align: center;
@@ -1411,16 +1411,16 @@
   border-radius:40%</string>
     </property>
     <property name="text">
-     <string>Call History</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_12">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>40</y>
-      <width>101</width>
-      <height>20</height>
+      <x>430</x>
+      <y>20</y>
+      <width>51</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -1434,7 +1434,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">  background-color: #2c4147;
+     <string notr="true">background-image: url(&quot;c:/temp/images/directory.jpg&quot;) 3 10 3 10;
   color: white;
   padding: 15px;
   text-align: center;
@@ -1446,7 +1446,7 @@
   border-radius:40%</string>
     </property>
     <property name="text">
-     <string>Directory</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="buttonCall">
@@ -1454,8 +1454,8 @@
      <rect>
       <x>120</x>
       <y>430</y>
-      <width>91</width>
-      <height>91</height>
+      <width>71</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="palette">
@@ -1466,7 +1466,7 @@
      </palette>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(&quot;c:/temp/phone.jpg&quot;) 3 10 3 10;
+     <string notr="true">background-image: url(&quot;c:/temp/phone_2.jpg&quot;) 3 10 3 10;
 border-top: 3px transparent;
 border-bottom: 3px transparent; 
 border-right: 10px transparent;
