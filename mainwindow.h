@@ -34,6 +34,10 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_12_clicked();
+
 private:
     Ui::MainWindow *ui;
     AddressBookModel *addressBook;

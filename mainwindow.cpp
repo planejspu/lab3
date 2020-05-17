@@ -5,8 +5,10 @@
 #include <QMessageBox>
 #include <addressbookmodel.h>
  std::vector<QString> phoneNumbers;
+ std::vector<QString> phoneNumbersHistory;
  int length;
- int clicks;
+ int calls=0;
+ int clicks=0;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
@@ -42,7 +44,7 @@ void MainWindow::on_actionExit_triggered()
 void MainWindow::on_pushButton_1_clicked()
 {
 
-    clicks++;
+if (clicks == 3) { clicks++;}
     if (phoneNumbers.size() < 10) {
     phoneNumbers.push_back("1") ;
     QString temp = ui->lblDisplayNumber->text();
@@ -62,7 +64,7 @@ void MainWindow::on_pushButton_1_clicked()
      ui->tableView->hideRow(i);
 
 }
-
+ clicks++;
 
 
 }
@@ -76,6 +78,7 @@ QString callText;
 QMessageBox *callContact = new QMessageBox;
 
     for (int i=0;i<phoneNumbers.size(); i++){
+
         if (i == 3 || i == 6){
 
             callText += "-" + phoneNumbers[i];
@@ -87,12 +90,10 @@ QMessageBox *callContact = new QMessageBox;
 }
 callContact->setStandardButtons(QMessageBox::Ok);
 
-//QString name = addressBook->firstNames[1];
-//addressBook->phoneNumbers[2];
+
 
 
 callContact->setText("Calling " + callText + "...");
-
 
 int ret = callContact->exec();
 
@@ -103,8 +104,17 @@ switch (ret) {
         }
 
 }
+for (int i=0;i<500;i++) {
+ui->tableView->showRow(i);
+}
 
 
+
+QString Numbers[10];
+Numbers->push_back(callText + "\n");
+for (int i=0; i<2; i++) {
+ui->lblCallHistory->setText(ui->lblCallHistory->text() + Numbers[i]);
+}
 
 
 
@@ -114,7 +124,9 @@ switch (ret) {
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    clicks++;
+ // 2 = abc
+
+if (clicks == 3) { clicks++;}
     if (phoneNumbers.size() < 10) {
     phoneNumbers.push_back("2") ;
     QString temp = ui->lblDisplayNumber->text();
@@ -128,23 +140,17 @@ void MainWindow::on_pushButton_2_clicked()
     }
     }
 
-//    QRegExp rx("1");
-//    for (int i = 0; i< 10; i++) {
-//    if (!(rx.indexIn(addressBook->phoneNumbers[i],1) == 1))
 
-//     ui->tableView->hideRow(i);
 
-//}
-
-    QRegExp rx("2");
+    QRegExp rx("[ABCabc]");
+    QRegExp rx2("2");
     for (int i = 0; i< addressBook->phoneNumbers.size(); i++) {
-    if (!(rx.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
 
-     ui->tableView->hideRow(i);
-
+      if  (!(rx2.indexIn(addressBook->phoneNumbers[i],clicks) == clicks))
+           ui->tableView->hideRow(i);
 }
 
-
+    clicks++;
 
 }
 
@@ -166,4 +172,14 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     ui->lblName->setText(addressBook->getPhoneNumber(index.row()));
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+       ui->stackedWidget->setCurrentIndex(0);
 }
