@@ -132,8 +132,14 @@ void MainWindow::on_btnDel_clicked()
     QString temp = ui->lblDisplayNumber->text();
     temp.remove(-1,1);
     ui->lblDisplayNumber->setText(temp);
-    if (phoneNumbers.size() > 0) {
+    if (phoneNumbers.size() > 0 || phoneNumbers.size() == 4) {
     phoneNumbers.pop_back();
+    if (clicks != 3 || clicks != 7 )
+   clicks--;
+
+ }
+    for (int i=0;i<addressBook->phoneNumbers.size();i++) {
+    ui->tableView->showRow(i);
     }
 }
 

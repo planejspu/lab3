@@ -53,9 +53,10 @@ void AddressBookModel::openFile(QString filePath)
     lastNames.clear();
     phoneNumbers.clear();
 
-    while(!in.atEnd()) {
-        QString line = in.readLine();
+    for(int i=0; !in.atEnd();i++){
+       QString line = in.readLine();
        QStringList fields = line.split(",");
+        if (i ==0) continue;
        for (int j = 0; j < fields.length(); j++) {
            std::cout << "[" << j << "]" << fields[j].toStdString();
        }

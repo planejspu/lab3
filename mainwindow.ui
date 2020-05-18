@@ -879,9 +879,9 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>320</x>
       <y>70</y>
-      <width>321</width>
+      <width>311</width>
       <height>421</height>
      </rect>
     </property>
@@ -1631,7 +1631,7 @@ border-left: 10px transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>735</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuTools">
