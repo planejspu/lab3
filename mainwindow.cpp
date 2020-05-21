@@ -134,8 +134,8 @@ void MainWindow::on_btnDel_clicked()
     ui->lblDisplayNumber->setText(temp);
     if (phoneNumbers.size() > 0 || phoneNumbers.size() == 4) {
     phoneNumbers.pop_back();
-    if (clicks != 3 || clicks != 7 )
-   clicks--;
+    clicks=0;
+
 
  }
     for (int i=0;i<addressBook->phoneNumbers.size();i++) {

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.button {
+{
   background-color: #000000; /* Green */
   border: none;
   color: white;
@@ -17,15 +12,3 @@
   border-radius:40%
 }
 
-
-</style>
-</head>
-<body>
-
-<h2>Rounded Buttons</h2>
-<p>Add rounded corners to a button with the border-radius property:</p>
-
-<button class="button>2px</button>
-
-</body>
-</html>
